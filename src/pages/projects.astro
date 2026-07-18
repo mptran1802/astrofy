@@ -3,49 +3,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
+<BaseLayout title = "Research Posters" sideBarActiveItemID="posters">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Research Posters</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Publication trends in Benzodiazepine and SSRI Co-Prescription Versus Monotherapy: Effects on Adherence and Anxiety Relief"
+    img="/project_poster_icon.webp"
+    desc="Apr 2026 | Collaborating with a team of ThinkNeuro interns, we conducted a bibliometric analysis of research trends on the impact of benzodiazepine-SSRI co-prescription on reducing anxiety-related symptoms, compared to SSRI monotherapy."
+    url="public/thinkneuro research poster.pdf"
+    target="_blank"
+    badge="Poster"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Classifying Sleep Stages Using Bitbrain Open Access Sleep (BOAS) Data"
+    img="/project_poster_icon.webp"
+    desc="Apr 2026 | My team at USC Neurotech developed a machine learning model that classifies EEG data into five classes (Wake, N1, N2, N3, REM) by using distinctive EEG features such as theta activity, sleep spindles, K-complexes, delta waves, and REM-associated patterns."
+    url="public/sleep classification research poster.pdf"
+    target="_blank"
+    badge="Poster"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Research Papers</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+    title="The Role of the Neural Mirroring System in Human Infant Imitation"
+    img="/project_paper_icon.webp"
+    desc="May 2025 | I published a peer-reviewed literature review to the National High School Journal of Science, conducted under the guidance of a Neuroscience Ph.D. from the University of Michigan Ann Harbor."
+    url="/public/The-Role-of-the-Neural-Mirroring-System-in-Human-Infant-Imitation (2).pdf"
+    target="_blank"
+    badge="Paper"
+
 </BaseLayout>

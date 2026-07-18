@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Me | Portfolio" sideBarActiveItemID="about">
+  <!-- Header Section -->
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold">My Story</h1>
+  </div>
+
+<!-- Main Narrative Section (Full Width) -->
+  <div class="space-y-6 text-base text-justify leading-relaxed max-w-none mb-14">
+    <p>
+      I was raised in Ho Chi Minh City, where attending international schools
+      exposed me to diverse worldviews early on. Witnessing a distinct lack of
+      modern therapeutic options in my home country revealed deep regional
+      healthcare disparities, inspiring me to pursue science. At my core, my
+      mission is simple: to make evidence-based discoveries that can build next-
+      generation tools, ultimately improving quality of life and bridging these
+      regional healthcare gaps.
+    </p>
+    <p>
+      But to power tools that truly impact communities, understanding the
+      nuances of “quality of life” is critical. For me, poetry is how I ground myself in
+      the complexities of human emotion and desire, exploring what it means to
+      live a fulfilling life. Neuroscience and poetry are simply two sides of the same
+      coin: both dedicated to the depth of the human experience.
+    </p>
+  </div>
+<hr class="border-base-300 my-12" />
+  <!-- Poetry Showcase Section -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-bold mb-6">Selected Poetry</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Left: Pasted Poem with typewriter/notebook effect -->
+      <div class="bg-amber-50/5 text-amber-900 dark:text-yellow-500 p-8 rounded-2xl border border-amber-900/10 shadow-inner flex flex-col justify-between">
+        <div>
+          <h3 class="font-serif italic text-lg mb-4 text-primary font-bold">Cậu Vàng</h3>
+          <p class="font-mono text-sm leading-relaxed whitespace-pre-line">
+            the dog running on the beach
+            like a child
+            distracts the sun from setting
+            for the sun to take longer
+            to change its clothes
+            before it shuts the light out
+            like a mother.
+          </p>
+        </div>
+        <span class="text-xs opacity-50 mt-6 font-mono">— Written in 2023</span>
+      </div>
+
+      <!-- Right: Book Photo & Visuals -->
+      <div class="space-y-4 flex flex-col justify-between">
+        <div class="bg-base-200 p-6 rounded-2xl border border-base-300 flex items-center gap-4">
+          <img src="/my-book.jpg" alt="My Poetry Book" class="w-24 h-32 rounded-lg object-cover shrink-0 shadow-md" />
+          <div>
+            <h4 class="font-bold text-lg">From the Pages of My Collection</h4>
+            <p class="text-sm opacity-70 mt-1">
+              A glimpse inside my published 100-poem collection, "From Within". 
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-4 bg-primary/10 rounded-xl text-xs text-center border border-primary/20">
+          ✨ My debut poetry collection is available for reading. See the articles below!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-base-300 my-10" />
+
+<!-- News & Press Section -->
+<div class="mb-6">
+  <h2 class="text-2xl font-bold mb-6">In the News</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <!-- Article 1 (Dân Việt) -->
+    <a href="https://danviet.vn/co-gai-17-tuoi-gianh-giai-a-tho-song-ngu-rung-dong-voi-ve-dep-quang-binh-khien-toi-viet-tac-pham-dau-tien-20241020120910664-d1190570.html" target="_blank" class="flex justify-between items-center p-5 bg-base-200 hover:bg-base-300 rounded-xl transition-all border border-base-300 group">
+      <div>
+        <span class="text-xs uppercase tracking-wider text-primary font-semibold">Dân Việt</span>
+        <h3 class="font-bold text-md mt-1 group-hover:underline">Cô gái 17 tuổi giành giải A thơ song ngữ...</h3>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-60 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+
+    <!-- Article 2 (Giáo dục và Thời đại) -->
+    <a href="https://giaoducthoidai.vn/chuyen-it-biet-ve-nu-sinh-gianh-giai-a-ve-tho-post670209.html" target="_blank" class="flex justify-between items-center p-5 bg-base-200 hover:bg-base-300 rounded-xl transition-all border border-base-300 group">
+      <div>
+        <span class="text-xs uppercase tracking-wider text-primary font-semibold">Giáo dục và Thời đại</span>
+        <h3 class="font-bold text-md mt-1 group-hover:underline">Chuyện ít biết về nữ sinh giành giải A về thơ</h3>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-60 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+
+  </div>
+</div>
+</BaseLayout>

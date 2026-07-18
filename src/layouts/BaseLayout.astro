@@ -26,13 +26,18 @@ const {
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100">
+      
+      <!-- Added flex, flex-col, and min-h-screen to pull the structure full height -->
+      <div class="drawer-content bg-base-100 flex flex-col min-h-screen">
         <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center">
-          <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
+        
+        <!-- Added flex-grow so the main text area stretches to consume remaining vertical spaces -->
+        <div class="md:flex md:justify-center flex-grow">
+          <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw] w-full">
             <slot />
           </main>
         </div>
+        
         <Footer />
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}

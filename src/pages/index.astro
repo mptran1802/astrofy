@@ -1,78 +1,73 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+  <div class="pb-12 mt-5 max-w-3xl">
+    <!-- Intro Block -->
+    <div class="text-xl py-1">Hey there!</div>
+    <div class="text-5xl font-bold">I'm Minh Anh Tran</div>
+    <div class="text-3xl py-3 font-bold text-primary">Brain | Tech | Art</div>
+    
+    <div class="py-2 text-base text-justify leading-relaxed">
+      A neuroscientist and developer in the making, I blend wet-lab research, coding, and contemporary poetry to explore the mind and transform science into stories that connect.
     </div>
+
+    <!-- Clean, Aesthetic Demographics Bullet Points -->
+    <div class="mt-8 mb-8 space-y-4 border-l-2 border-primary/30 pl-5">
+      <div class="flex items-center gap-3 group">
+        <div class="bg-base-200 p-2.5 rounded-xl text-lg group-hover:bg-primary/10 transition-colors">
+          🎓
+        </div>
+        <div>
+          <span class="block text-xs uppercase tracking-wider text-base-content/50 font-semibold">Education</span>
+          <span class="text-base font-medium text-base-content/90">University of Southern California</span>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3 group">
+        <div class="bg-base-200 p-2.5 rounded-xl text-lg group-hover:bg-primary/10 transition-colors">
+          🧬
+        </div>
+        <div>
+          <span class="block text-xs uppercase tracking-wider text-base-content/50 font-semibold">Major</span>
+          <span class="text-base font-medium text-base-content/90">Neuroscience</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 group">
+        <div class="bg-base-200 p-2.5 rounded-xl text-lg group-hover:bg-primary/10 transition-colors">
+          📅
+        </div>
+        <div>
+          <span class="block text-xs uppercase tracking-wider text-base-content/50 font-semibold">Expected Graduation</span>
+          <span class="text-base font-medium text-base-content/90">May 2029</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 group">
+        <div class="bg-base-200 p-2.5 rounded-xl text-lg group-hover:bg-primary/10 transition-colors">
+          📍
+        </div>
+        <div>
+          <span class="block text-xs uppercase tracking-wider text-base-content/50 font-semibold">Location</span>
+          <span class="text-base font-medium text-base-content/90">Los Angeles, CA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <!-- Primary Resume Button pointing directly to your PDF -->
+      <a 
+        href="/resume.pdf" 
+        target="_blank" 
+        class="btn btn-primary inline-flex items-center gap-2 normal-case shadow-md transition-all hover:scale-[1.02]"
+      >
+        <span>View Resume</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
       </a>
     </div>
-  </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
 </BaseLayout>
